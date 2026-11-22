@@ -1,0 +1,122 @@
+
+{
+  "version": "5",
+  "project_name": "Delta Crypto Scanner V5",
+  "exchange": "Delta Exchange India",
+
+  "timeframes": {
+    "wave": "15m",
+    "tide": "1h"
+  },
+
+  "zero_value_policy": {
+    "enabled": true,
+    "rule": "A condition threshold or filter value of 0 disables that condition.",
+    "period_rule": "Indicator calculation periods must remain greater than zero."
+  },
+
+  "indicators": {
+    "ema": {
+      "enabled": true,
+      "wave_periods": [9, 20, 50],
+      "tide_periods": [9, 20, 50]
+    },
+
+    "adx": {
+      "enabled": true,
+      "period": 14,
+      "threshold": 20,
+      "direction_filter": 1
+    },
+
+    "rsi": {
+      "enabled": true,
+      "period": 14,
+      "buy_threshold": 50,
+      "sell_threshold": 50
+    },
+
+    "macd": {
+      "enabled": true,
+      "fast": 12,
+      "slow": 26,
+      "signal": 9
+    },
+
+    "stochastic": {
+      "enabled": true,
+      "k_period": 14,
+      "d_period": 3,
+      "smoothing": 3,
+      "overbought": 80,
+      "oversold": 20
+    },
+
+    "supertrend": {
+      "enabled": true,
+      "atr_period": 10,
+      "multiplier": 3
+    },
+
+    "bollinger_bands": {
+      "enabled": true,
+      "period": 20,
+      "deviation": 2
+    },
+
+    "volume": {
+      "enabled": true,
+      "sma_period": 20,
+      "multiplier": 1
+    },
+
+    "obv": {
+      "enabled": true,
+      "confirmation_threshold": 1
+    },
+
+    "atr": {
+      "enabled": true,
+      "period": 14,
+      "stop_multiplier": 1.5
+    },
+
+    "support_resistance": {
+      "enabled": true,
+      "lookback": 160,
+      "pivot": 3,
+      "confirmation": 7
+    }
+  },
+
+  "strategy": {
+    "minimum_buy_score": 75,
+    "maximum_sell_score": 25,
+    "minimum_confirmations": 7,
+    "risk_reward": 2,
+    "closed_candle_confirmation": true
+  },
+
+  "risk_management": {
+    "stop_loss_enabled": true,
+    "target_1_enabled": true,
+    "target_2_enabled": true,
+    "risk_reward": 2
+  },
+
+  "telegram": {
+    "enabled": false,
+    "fresh_entry_only": true,
+    "notify_buy": true,
+    "notify_sell": true,
+    "notify_neutral": false,
+    "duplicate_alerts": false
+  },
+
+  "scanner": {
+    "scan_interval_seconds": 60,
+    "websocket_enabled": true,
+    "open_interest_enabled": true,
+    "all_perpetual_markets": true
+  }
+}
